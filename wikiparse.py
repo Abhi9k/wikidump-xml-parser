@@ -41,7 +41,7 @@ def parse_chunk(
         end = in_file.tell()
     else:
         end = end_byte_pos
-    in_file.seek(start_byte_pos, 0)
+    in_file.seek(start, 0)
     in_revision = False
     revision_count = 0
     page_id = -2
@@ -80,8 +80,8 @@ def parse_chunk(
                     max_count = revision_count
                     max_title = title
                     max_id = page_id
-            progress = print_progress(in_file.tell(), start_byte_pos, end_byte_pos, progress)
-            if in_file.tell() >= end_byte_pos:
+            progress = print_progress(in_file.tell(), start, end, progress)
+            if in_file.tell() >= end:
                 break
         elif '<timestamp' in line and timestamp is None and in_revision:
             line = line.strip()
