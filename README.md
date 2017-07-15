@@ -11,3 +11,6 @@ Python module to parse xml wikidump of type pages-meta-history and return page w
 3. Run the module
     1. To parse the first 2 Kb of the dump file type: ```python wikiparse.py config 0 2048```
     2. To parse the entire dump file type: ```python wikiparse.py config 0 -1```
+## Response
+The module prints following information on the console
+```Page ID Page Title Total number of revisions```
