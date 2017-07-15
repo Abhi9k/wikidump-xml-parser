@@ -24,9 +24,9 @@ def is_valid_revision_timestamp(timestamp, timestamp_lower, timestamp_upper):
 
 
 def print_progress(current_byte_pos, start_byte_pos, end_byte_pos, last_progress):
-    progress = ((float(current_byte_pos) - start_byte_pos)* 100)/ (start_byte_pos - end_byte_pos)
+    progress = ((float(current_byte_pos) - start_byte_pos)* 100)/ (end_byte_pos - start_byte_pos)
     progress = int(progress)
-    if progress - last_progress > 2:
+    if (progress - last_progress) > 2:
         print progress, 'percent completed'
         return progress
     return last_progress
